@@ -1,0 +1,51 @@
+# TODO Hostname
+# TODO install utils
+# TODO Zsh
+---
+# install ansible and all prerequisites
+- name: adjust hostname
+  hostname:
+    name: lubi
+
+- name: Install a list of packages
+  apt:
+    pkg:
+      - htop
+      - vim
+      - git
+      - zsh
+
+- name: Install Discord
+  snap:
+    name:
+      - discord
+
+# TODO Change only if discord is missing -> TODO Make customizing tasks where no sudo is required
+- name: Add Discord to favorties
+  shell: "gsettings set org.gnome.shell favorite-apps \"$(gsettings get org.gnome.shell favorite-apps | sed s/.$//), 'discord_discord.desktop']\""
+  become: True
+  become_user: lubi
+
+# TODO Put links and version dependant stuff in variables
+# FIXME Is this a security risk? Does the file get overwritten if it already exists?
+- name: Download Teamspeak
+  get_url:
+    url: "http://dl.4players.de/ts/releases/3.5.2/TeamSpeak3-Client-linux_amd64-3.5.2.run?&_ga=2.117542730.2101365763.1595618288-515997254.1595618288&&pk_vid=73175621d5701e1d15956183272e8108"
+    dest: /tmp/ts3.run
+  become: True
+  become_user: lubi
+
+- name: Make Teamspeak installation executable
+  file:
+    path: /tmp/ts3.run
+    mode: u=rwx,g=r,o=r
+
+- name: Install Teamspeak
+  shell: "/tmp/ts3.run | echo q | printf '\n' | echo q | echo y"
+  become: True
+  become_user: lubi
+
+
+
+
+# Teamspeak
