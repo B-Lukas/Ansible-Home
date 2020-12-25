@@ -15,6 +15,6 @@ on:
 jobs:
   container:
     runs-on: ubuntu-latest
-    container: ansible-lint:latest
+    container: cytopia/ansible-lint:latest
     steps:
       - run: ansible-lint *.yml
