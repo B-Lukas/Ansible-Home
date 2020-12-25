@@ -1,20 +1,3 @@
-# TODO Hostname
-# TODO install utils
-# TODO Zsh
----
-# install ansible and all prerequisites
-- name: adjust hostname
-  hostname:
-    name: lubi
-
-- name: Install a list of packages
-  apt:
-    pkg:
-      - htop
-      - vim
-      - git
-      - zsh
-
 - name: Install Discord
   snap:
     name:
@@ -44,8 +27,3 @@
   shell: "/tmp/ts3.run | echo q | printf '\n' | echo q | echo y"
   become: True
   become_user: lubi
-
-
-
-
-# Teamspeak

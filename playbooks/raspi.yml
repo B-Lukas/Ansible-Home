@@ -1,6 +1,6 @@
 ---
-- hosts: localhost
+- hosts: raspi
   roles:
     - role: basic_linux_setup
       vars:
-        hostname: "lubi"
+        hostname: "pi"
