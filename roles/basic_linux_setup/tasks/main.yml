@@ -1,0 +1,5 @@
+---
+- name: Include setup for Hostname and basic utils
+  import_tasks: setup.yml
+  become: True
+  become_user: root

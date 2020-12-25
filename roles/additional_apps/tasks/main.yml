@@ -1,0 +1,7 @@
+---
+- name: Install Communication apps
+  import_tasks: communication_apps.yml
+  become: True
+
+- name: Install Intellij
+  include_tasks: intellij_setup.yml

@@ -1,0 +1,12 @@
+---
+- name: adjust hostname
+  hostname:
+    name: "{{ hostname }}"
+
+- name: Install utility packages
+  apt:
+    pkg:
+      - htop
+      - vim
+      - git
+      - zsh
