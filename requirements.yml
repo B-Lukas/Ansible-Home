@@ -1,0 +1,11 @@
+---
+# Install a role from the Ansible Galaxy
+- src: dfarrell07.opendaylight
+- src: geerlingguy.repo-epel
+- src: geerlingguy.git
+- src: geerlingguy.pip
+- src: geerlingguy.ansible
+# TODO This docker install does not work for raspi, create role for raspi.
+- src: geerlingguy.docker
+- src: geerlingguy.nodejs
+- src: geerlingguy.awx

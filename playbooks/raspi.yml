@@ -1,6 +1,14 @@
 ---
 - hosts: raspi
+  become: true
   roles:
     - role: basic_linux_setup
       vars:
         hostname: "pi"
+    # include roles to install awx and dependencies
+    - geerlingguy.git
+    - geerlingguy.pip
+    - geerlingguy.ansible
+    - geerlingguy.docker
+    - geerlingguy.nodejs
+    - geerlingguy.awx
