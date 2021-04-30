@@ -1,0 +1,9 @@
+---
+- name: Install Focusrite driver for audio setup
+  ansible.windows.win_package:
+    path: https://fael-downloads-prod.focusrite.com/customer/prod/s3fs-public/downloads/Focusrite_Usb_4.65.5.658.exe
+    state: present
+
+# TODO Install Nvidia Experience
+
+# TODO Install Grafikdings
