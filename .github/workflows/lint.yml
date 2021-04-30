@@ -18,6 +18,8 @@ jobs:
     container: cytopia/ansible-lint:latest
     steps:
       - run: |
+         ls
+         echo $PWD
          ansible-lint playbooks/windows.yml
          ansible-lint playbooks/ubuntu.yml
          ansible-lint playbooks/raspi.yml
