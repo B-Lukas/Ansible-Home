@@ -17,4 +17,7 @@ jobs:
     runs-on: ubuntu-latest
     container: cytopia/ansible-lint:latest
     steps:
-      - run: ansible-lint playbooks/**.yml
+      - run: |
+         ansible-lint playbooks/windows.yml
+         ansible-lint playbooks/ubuntu.yml
+         ansible-lint playbooks/raspi.yml
