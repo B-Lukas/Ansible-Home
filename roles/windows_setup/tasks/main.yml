@@ -1,7 +1,27 @@
 ---
-#- name: Install Communication apps
-#  import_tasks: communication_apps.yml
-#  become: True
+- name: Create directory for Ansible downloads
+  ansible.windows.win_file:
+    path: C:\Users\Lukas\Downloads\Ansible
+    state: directory
 
-- name: Install Intellij
-  include_tasks: additional_drivers.yml
+- name: Install additional software
+  include_tasks: additional_software.yml
+
+# Outdated in favor of Chocolatey
+#- name: Install communication software
+#  import_tasks: communication_software.yml
+
+- name: Install recreation software
+  import_tasks: recreation_software.yml
+
+# TODO Create private Chocolatey packages due to security purposes
+- name: Install multiple packages
+  win_chocolatey:
+    name:
+      - git
+      - teamspeak
+      - discord
+      - signal
+      - steam
+      - streamlabs-obs
+    state: latest

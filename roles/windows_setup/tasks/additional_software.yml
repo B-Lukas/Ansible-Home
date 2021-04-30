@@ -1,0 +1,12 @@
+---
+- name: Download Focusrite driver for audio setup
+  win_get_url:
+    url:  https://fael-downloads-prod.focusrite.com/customer/prod/s3fs-public/downloads/Focusrite_Usb_4.65.5.658.exe
+    dest: C:\Users\Lukas\Downloads\Ansible\Focusrite_Usb_4.65.5.658.exe
+
+- name: Download Focusrite driver for audio setup
+  win_get_url:
+    url:  https://de.download.nvidia.com/GFE/GFEClient/3.22.0.32/GeForce_Experience_v3.22.0.32.exe
+    dest: C:\Users\Lukas\Downloads\Ansible\GeForce_Experience_v3.22.0.32.exe
+    checksum_algorithm: SHA256
+    checksum: AA1B139ED50C981B4ABE5AA38BE9C85B686916C8F7A9710CBA037168762C3659

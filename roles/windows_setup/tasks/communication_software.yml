@@ -1,0 +1,21 @@
+# Alternative unused way to download packages without chocolatey and without automated install
+- name: Download Teamspeak
+  win_get_url:
+    url:  https://files.teamspeak-services.com/releases/client/3.5.6/TeamSpeak3-Client-win64-3.5.6.exe
+    dest: C:\Users\Lukas\Downloads\Ansible\TeamSpeak3-Client-win64-3.5.6.exe
+    checksum_algorithm: SHA256
+    checksum: 86381879a3e7dc7a2e90e4da1cccfbd2e5359b7ce6dd8bc11196d18dfc9e2abc
+
+- name: Downlaod Signal
+  win_get_url:
+    url:  https://updates.signal.org/desktop/signal-desktop-win-5.0.0.exe
+    dest: C:\Users\Lukas\Downloads\Ansible\signal-desktop-win-5.0.0.exe
+    checksum_algorithm: SHA256
+    checksum: C4D9242776CA70989F1F1DC9A7607F6C21A92305B4DD7D4A6062445AA3E63245
+
+- name: Downlaod Discord
+  win_get_url:
+    url:  https://updates.signal.org/desktop/signal-desktop-win-5.0.0.exe
+    dest: C:\Users\Lukas\Downloads\Ansible\signal-desktop-win-5.0.0.exe
+    checksum_algorithm: SHA256
+    checksum: FE6097BAB95CF9CE30F0819C64864986043795941C99F6DBA5763C67E4313B8E

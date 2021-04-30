@@ -1,6 +1,6 @@
 ---
 - name: Install Communication apps
-  import_tasks: communication_apps.yml
+  import_tasks: communication_software.yml
   become: True
 
 - name: Install Intellij
