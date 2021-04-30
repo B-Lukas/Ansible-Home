@@ -1,8 +1,26 @@
 ---
-- name: Install Focusrite driver for audio setup
-  ansible.windows.win_package:
-    path: https://fael-downloads-prod.focusrite.com/customer/prod/s3fs-public/downloads/Focusrite_Usb_4.65.5.658.exe
-    state: present
+
+- name: Create directory structure
+  ansible.windows.win_file:
+    path: C:\Users\Lukas\Downloads\Ansible 
+    state: directory
+
+
+# Install/uninstall with win_package
+- name: Download the 7-Zip package
+  win_get_url:
+    url:  https://fael-downloads-prod.focusrite.com/customer/prod/s3fs-public/downloads/Focusrite_Usb_4.65.5.658.exe
+    dest: C:\Users\Lukas\Downloads\Ansible\Focusrite_Usb_4.65.5.658.exe
+
+    #- name: Ensure 7-Zip is installed via win_package
+    # win_package:
+    # path: C:\Users\Lukas\Downloads\Ansible\Focusrite_Usb_4.65.5.658.exe
+    # state: present
+
+#- name: Install Focusrite driver for audio setup
+#  ansible.windows.win_package:
+#    path: https://fael-downloads-prod.focusrite.com/customer/prod/s3fs-public/downloads/Focusrite_Usb_4.65.5.658.exe
+#    state: present
 
 # TODO Install Nvidia Experience
 
