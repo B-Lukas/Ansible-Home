@@ -11,9 +11,6 @@
 #- name: Install communication software
 #  import_tasks: communication_software.yml
 
-- name: Install recreation software
-  import_tasks: recreation_software.yml
-
 # TODO Create private Chocolatey packages due to security purposes
 - name: Install multiple packages
   win_chocolatey:
